@@ -2,10 +2,10 @@ import socket
 
 def scan(target, ports):
     """
-    Scan a range of ports on a target host.
+    Scan a range of ports on a single target host.
 
-    :param target: The target host's IP address.
-    :param ports: The number of ports to scan.
+    param target: The target host's IP address.
+    param ports: The number of ports to scan.
     """
     print('\n' + 'Starting Scan For ' + str(target))
     for port in range(1, ports):
@@ -13,10 +13,10 @@ def scan(target, ports):
 
 def scan_port(ipaddress, port):
     """
-    Scan a specific port on a target host.
+    Scan a specific port on a single target host.
 
-    :param ipaddress: The target host's IP address.
-    :param port: The port to scan.
+    param ipaddress: The target host's IP address.
+    param port: The port to scan.
     """
     try:
         sock = socket.socket()
@@ -26,13 +26,7 @@ def scan_port(ipaddress, port):
     except:
         pass
 
-targets = input("[*] Enter Targets To Scan (split them by ,): ")
+target = input("[*] Enter the Target IP Address: ")
 ports = int(input("[*] Enter How Many Ports You Want To Scan: "))
 
-if ',' in targets:
-    print("[*] Scanning Multiple Targets")
-    for ip_addr in targets.split(','):
-        scan(ip_addr.strip(' '), ports)
-else:
-    scan(targets, ports)
-
+scan(target, ports)
