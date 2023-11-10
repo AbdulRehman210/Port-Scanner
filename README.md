@@ -1,3 +1,3 @@
 # Port-Scanner
 A simple port scanner for checking open ports on a node.
-This tool scans a range of IP addresses or simply a single target with any amount of ports provided. 
+This simple port scanner checks for open ports on a target node within the range of ports provided.
